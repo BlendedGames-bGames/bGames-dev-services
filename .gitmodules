@@ -1,0 +1,12 @@
+[submodule "User routes microservice"]
+	path = User routes microservice
+	url = https://github.com/BlendedGames-bGames/bGames-UserManagementService
+[submodule "Post routes microservices "]
+	path = "Post routes microservices "
+	url = https://github.com/BlendedGames-bGames/bGames-APIrestPOSTAtt
+[submodule "Post routes microservice"]
+	path = Post routes microservice
+	url = https://github.com/BlendedGames-bGames/bGames-APIrestPOSTAtt
+[submodule "Get routes microservice"]
+	path = Get routes microservice
+	url = https://github.com/BlendedGames-bGames/bGames-APIRestGETService
