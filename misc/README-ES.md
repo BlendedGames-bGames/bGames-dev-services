@@ -68,6 +68,23 @@ USE mydatabase
 SOURCE bGames_backup.sql
 exit;
 ```
+A su vez, también se deben cambiar las credenciales de cada microservicio. Ve a `'<microservicio>/src/database.js'` y reemplaza los campos de la variable `'mysqlConnection'`.
+
+Ejemplo de variable:
+```
+var mysqlConnection  = mysql.createPool({
+    connectionLimit : 1000,
+    connectTimeout  : 60 * 60 * 1000,
+    acquireTimeout  : 60 * 60 * 1000,
+    timeout         : 60 * 60 * 1000,
+    host:'localhost',
+    port:'3306',
+    user:'root',
+    password:'password',
+    database: 'mydatabase',
+    multipleStatements:true
+});
+```
 
 Después, es necesario instalar los módulos de Node. Ubicado en la carpeta raíz del repositorio, puedes ejecutar el siguiente archivo shell, que abrirá tres terminales para instalar las dependencias:
 
@@ -79,4 +96,8 @@ Finalmente, cada vez que se quiera levantar los servicios, se debe usar la sigui
 
 ```shell
 sh manual-start.sh
+```
+En caso de obtener un error por @babel/node ejecutar el siguiente comando antes de inicializar.
+```
+npm i -g @babel/node
 ```
